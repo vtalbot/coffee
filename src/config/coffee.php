@@ -10,7 +10,7 @@ return array(
 
     'options' => array(
         'filename' => null,
-        'header' => '',
+        'header' => false,
         'bare' => false,
     ),
 
@@ -31,6 +31,16 @@ return array(
     'routes' => array(
         '',
     ),
+
+    /*
+    |--------------------------------------------------------------------------
+    | JavaScript prefix routes
+    |--------------------------------------------------------------------------
+    | Just the URL, won't be use to find the CoffeeScript files.
+    | Example: ellicom.com/js/jquery/test.js will search for jquery/test.coffee
+    */
+
+    'prefix' => 'js/',
 
     /*
     |--------------------------------------------------------------------------

@@ -36,11 +36,13 @@ class CoffeeServiceProvider extends ServiceProvider {
   {
     $app = $this->app;
 
+    $prefix = $app['config']['coffee.prefix'];
+
     foreach ($app['config']['coffee.routes'] as $routes)
     {
       foreach ($app['config']['coffee.extensions'] as $ext)
       {
-        \Route::get($routes.'{file}.'.$ext, function($file) use ($routes)
+        \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes)
         {
           return \Coffee::make($routes.$file);
         });

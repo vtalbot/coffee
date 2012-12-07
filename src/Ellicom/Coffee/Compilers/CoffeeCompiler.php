@@ -17,7 +17,9 @@ class CoffeeCompiler extends Compiler implements CompilerInterface {
    */
   public function compile($path)
   {
-    $options = $this->app['config']['coffee.options'];
+    $app = app();
+    
+    $options = $app['config']['coffee.options'];
 
     $contents = Coffee::compile($this->files->get($path), $options);
 
