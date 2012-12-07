@@ -44,7 +44,8 @@ class CoffeeServiceProvider extends ServiceProvider {
       {
         \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes)
         {
-          return \Coffee::make($routes.$file);
+          $coffee = \Coffee::make($routes.$file);
+          return \Response::make($coffee, 200, array('Content-Type' => 'text/javascript'));
         });
       }
     }
