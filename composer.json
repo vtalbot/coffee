@@ -1,7 +1,7 @@
 {
     "name": "ellicom/coffee",
-    "description": "CoffeeScript compiler for Laravel",
-    "keywords": ["laravel", "coffee", "coffeescript"],
+    "description": "CoffeeScript compiler for Laravel 4 (Illuminate)",
+    "keywords": ["laravel", "coffee", "coffeescript", "illuminate"],
     "license": "MIT",
     "authors": [
         {
