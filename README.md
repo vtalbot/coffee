@@ -4,7 +4,7 @@
 
 ### Installation
 
-Copy `vendor/ellicom/coffee/src/config/coffee.php` in `app/config` then edit it for your needs.
+Run `php artisan config:publish ellicom/coffee`
 
 Add `'Ellicom\Coffee\CoffeeServiceProvider',` to `providers` in `app/config/app.php`
 and `'Coffee' => 'Ellicom\Coffee\Facades\Coffee',` to `aliases` in `app/config/app.php`
