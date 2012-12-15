@@ -20,5 +20,8 @@
     "autoload": {
         "psr-0": {"Ellicom\\Coffee": "src/"}
     },
+    "scripts": {
+        "post-package-install": "php artisan config:publish ellicom/coffee"
+    },
     "minimum-stability": "dev"
 }
