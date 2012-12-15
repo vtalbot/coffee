@@ -13,10 +13,12 @@ and `'Coffee' => 'Ellicom\Coffee\Facades\Coffee',` to `aliases` in `app/config/a
 
 ### Usage
 
-`<script src="js/test.js"></script>`
+    <script src="js/test.js"></script>
 
 If `js/test.js` doesn't exists in the `public` directory, it will search for `test.coffee` in `app/coffee` directory.
 If found, compile it if needed and return the result.
+
+    Coffee::make('file-in-coffee-directory');
 
 
 ### Todo
