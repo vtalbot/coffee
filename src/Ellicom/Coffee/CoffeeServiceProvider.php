@@ -18,6 +18,9 @@ class CoffeeServiceProvider extends ServiceProvider {
    */
   public function register()
   {
+    $app = $this->app;
+    $app['config']->package('ellicom/coffee', 'ellicom/coffee', 'ellicom/coffee');
+
     $this->registerRoutes();
 
     $this->registerEngineResolver();
@@ -36,11 +39,11 @@ class CoffeeServiceProvider extends ServiceProvider {
   {
     $app = $this->app;
 
-    $prefix = $app['config']['coffee.prefix'];
+    $prefix = $app['config']['ellicom/coffee::prefix'];
 
-    foreach ($app['config']['coffee.routes'] as $routes)
+    foreach ($app['config']['ellicom/coffee::routes'] as $routes)
     {
-      foreach ($app['config']['coffee.extensions'] as $ext)
+      foreach ($app['config']['ellicom/coffee::extensions'] as $ext)
       {
         \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes)
         {
@@ -107,7 +110,12 @@ class CoffeeServiceProvider extends ServiceProvider {
   {
     $this->app['coffee.finder'] = $this->app->share(function($app)
     {
-      $paths = $app['config']['coffee.paths'];
+      $paths = $app['config']['ellicom/coffee::paths'];
+
+      foreach ($paths as $key => $path)
+      {
+        $paths[$key] = $app['path'].$path;
+      }
 
       return new FileViewFinder($app['files'], $paths, array('coffee'));
     });

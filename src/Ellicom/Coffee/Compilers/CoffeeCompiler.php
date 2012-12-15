@@ -19,7 +19,7 @@ class CoffeeCompiler extends Compiler implements CompilerInterface {
   {
     $app = app();
     
-    $options = $app['config']['coffee.options'];
+    $options = $app['config']['ellicom/coffee::options'];
 
     $contents = Coffee::compile($this->files->get($path), $options);
 
