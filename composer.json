@@ -21,7 +21,8 @@
         "psr-0": {"Ellicom\\Coffee": "src/"}
     },
     "scripts": {
-        "post-package-install": "php artisan config:publish ellicom/coffee"
+        "post-install-cmd": "php artisan config:publish ellicom/coffee",
+        "post-update-cmd": "php artisan config:publish ellicom/coffee"
     },
     "minimum-stability": "dev"
 }
