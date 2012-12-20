@@ -48,7 +48,18 @@ class CoffeeServiceProvider extends ServiceProvider {
         \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes)
         {
           $coffee = \Coffee::make($routes.$file);
-          return \Response::make($coffee, 200, array('Content-Type' => 'text/javascript'));
+
+          $response = \Response::make($coffee, 200, array('Content-Type' => 'text/javascript'));
+          $response->setCache(array('public' => true));
+
+          if ( ! is_null($app['config']['ellicom/coffee::expires']))
+          {
+            $date = date_create();
+            $date->add(new \DateInterval('PT'.$app['config']['ellicom/coffee::expires'].'M'));
+            $response->setExpires($date);
+          }
+
+          return $response;
         });
       }
     }
