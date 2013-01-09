@@ -45,7 +45,7 @@ class CoffeeServiceProvider extends ServiceProvider {
     {
       foreach ($app['config']['ellicom/coffee::extensions'] as $ext)
       {
-        \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes)
+        \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes, $app)
         {
           $coffee = \Coffee::make($routes.$file);
 
