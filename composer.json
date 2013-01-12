@@ -20,5 +20,10 @@
     "autoload": {
         "psr-0": {"Ellicom\\Coffee": "src/"}
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
     "minimum-stability": "dev"
 }
