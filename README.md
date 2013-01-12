@@ -1,8 +1,12 @@
 # CoffeeScript Compiler for Laravel 4 (Illuminate)
 
-[![Build Status](https://travis-ci.org/Ellicom/coffee.png)](https://travis-ci.org/Ellicom/coffee)
-
 ### Installation
+
+Add to your composer.json those lines
+
+    "require": {
+        "ellicom/coffee": "1.*"
+    }
 
 Run `php artisan config:publish ellicom/coffee`
 
@@ -19,8 +23,3 @@ If `js/test.js` doesn't exists in the `public` directory, it will search for `te
 If found, compile it if needed and return the result.
 
     Coffee::make('file-in-coffee-directory');
-
-
-### Todo
-
-Add tests.
