@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Coffee\Compilers;
+namespace VTalbot\Coffee\Compilers;
 
 use Illuminate\Filesystem;
 use Illuminate\View\Compilers\Compiler;
@@ -19,7 +19,7 @@ class CoffeeCompiler extends Compiler implements CompilerInterface {
   {
     $app = app();
     
-    $options = $app['config']['ellicom/coffee::options'];
+    $options = $app['config']['vtalbot/coffee::options'];
 
     $contents = Coffee::compile($this->files->get($path), $options);
 

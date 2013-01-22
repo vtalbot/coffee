@@ -11,7 +11,7 @@
          syntaxCheck="false"
 >
   <testsuites>
-    <testsuite name="Ellicom CoffeeScript Test Suite">
+    <testsuite name="VTalbot CoffeeScript Test Suite">
       <directory>./tests/</directory>
     </testsuite>
   </testsuites>

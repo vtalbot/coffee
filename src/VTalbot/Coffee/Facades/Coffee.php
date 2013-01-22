@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Coffee\Facades;
+namespace VTalbot\Coffee\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Coffee;
+namespace VTalbot\Coffee;
 
 use Illuminate\View\Engines\EngineInterface;
 use Illuminate\Support\Contracts\RenderableInterface as Renderable;
@@ -10,7 +10,7 @@ class Coffee implements Renderable {
   /**
    * The CoffeeScript environment instance.
    *
-   * @var Ellicom\Coffee\Environment
+   * @var VTalbot\Coffee\Environment
    */
   protected $environment;
 
@@ -38,7 +38,7 @@ class Coffee implements Renderable {
   /**
    * Create a new CoffeeScript instance.
    *
-   * @param  Ellicom\Coffee\Environment  $environment
+   * @param  VTalbot\Coffee\Environment  $environment
    * @param  Illuminate\View\Engines\EngineInterface  $engine
    * @param  string  $coffee
    * @param  string  $path
@@ -83,7 +83,7 @@ class Coffee implements Renderable {
   /**
    * Get the CoffeeScript environment instance.
    *
-   * @return Ellicom\Coffee\Environment
+   * @return VTalbot\Coffee\Environment
    */
   public function getEnvironment()
   {

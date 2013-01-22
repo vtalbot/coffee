@@ -1,13 +1,13 @@
 <?php
 
-namespace Ellicom\Coffee;
+namespace VTalbot\Coffee;
 
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\FileViewFinder;
-use Ellicom\Coffee\Compilers\CoffeeCompiler;
+use VTalbot\Coffee\Compilers\CoffeeCompiler;
 
 class CoffeeServiceProvider extends ServiceProvider {
 
@@ -19,7 +19,7 @@ class CoffeeServiceProvider extends ServiceProvider {
   public function register()
   {
     $app = $this->app;
-    $app['config']->package('ellicom/coffee', 'ellicom/coffee', 'ellicom/coffee');
+    $app['config']->package('vtalbot/coffee', 'vtalbot/coffee', 'vtalbot/coffee');
 
     $this->registerRoutes();
 
@@ -39,11 +39,11 @@ class CoffeeServiceProvider extends ServiceProvider {
   {
     $app = $this->app;
 
-    $prefix = $app['config']['ellicom/coffee::prefix'];
+    $prefix = $app['config']['vtalbot/coffee::prefix'];
 
-    foreach ($app['config']['ellicom/coffee::routes'] as $routes)
+    foreach ($app['config']['vtalbot/coffee::routes'] as $routes)
     {
-      foreach ($app['config']['ellicom/coffee::extensions'] as $ext)
+      foreach ($app['config']['vtalbot/coffee::extensions'] as $ext)
       {
         \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes, $app)
         {
@@ -52,10 +52,10 @@ class CoffeeServiceProvider extends ServiceProvider {
           $response = \Response::make($coffee, 200, array('Content-Type' => 'text/javascript'));
           $response->setCache(array('public' => true));
 
-          if ( ! is_null($app['config']['ellicom/coffee::expires']))
+          if ( ! is_null($app['config']['vtalbot/coffee::expires']))
           {
             $date = date_create();
-            $date->add(new \DateInterval('PT'.$app['config']['ellicom/coffee::expires'].'M'));
+            $date->add(new \DateInterval('PT'.$app['config']['vtalbot/coffee::expires'].'M'));
             $response->setExpires($date);
           }
 
@@ -121,7 +121,7 @@ class CoffeeServiceProvider extends ServiceProvider {
   {
     $this->app['coffee.finder'] = $this->app->share(function($app)
     {
-      $paths = $app['config']['ellicom/coffee::paths'];
+      $paths = $app['config']['vtalbot/coffee::paths'];
 
       foreach ($paths as $key => $path)
       {

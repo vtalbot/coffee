@@ -1,6 +1,6 @@
 <?php
 
-namespace Ellicom\Coffee;
+namespace VTalbot\Coffee;
 
 use Closure;
 use Illuminate\Events\Dispatcher;
@@ -80,7 +80,7 @@ class Environment {
    * Get a evaluated CoffeeScript contents for the given CoffeeScript.
    *
    * @param  string  $coffee
-   * @return Ellicom\Coffee\Coffee
+   * @return VTalbot\Coffee\Coffee
    */
   public function make($coffee)
   {

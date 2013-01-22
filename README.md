@@ -5,15 +5,15 @@
 Add to your composer.json those lines
 
     "require": {
-        "ellicom/coffee": "1.*"
+        "vtalbot/coffee": "1.*"
     }
 
-Run `php artisan config:publish ellicom/coffee`
+Run `php artisan config:publish vtalbot/coffee`
 
-Then edit `config.php` in `app/packages/ellicom/coffee` to your needs.
+Then edit `config.php` in `app/packages/vtalbot/coffee` to your needs.
 
-Add `'Ellicom\Coffee\CoffeeServiceProvider',` to `providers` in `app/config/app.php`
-and `'Coffee' => 'Ellicom\Coffee\Facades\Coffee',` to `aliases` in `app/config/app.php`
+Add `'VTalbot\Coffee\CoffeeServiceProvider',` to `providers` in `app/config/app.php`
+and `'Coffee' => 'VTalbot\Coffee\Facades\Coffee',` to `aliases` in `app/config/app.php`
 
 ### Usage
 

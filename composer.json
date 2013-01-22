@@ -1,5 +1,5 @@
 {
-    "name": "ellicom/coffee",
+    "name": "vtalbot/coffee",
     "description": "CoffeeScript compiler for Laravel 4 (Illuminate)",
     "keywords": ["laravel", "coffee", "coffeescript", "illuminate"],
     "license": "MIT",
@@ -18,7 +18,7 @@
         "mockery/mockery": "0.7.2"
     },
     "autoload": {
-        "psr-0": {"Ellicom\\Coffee": "src/"}
+        "psr-0": {"VTalbot\\Coffee": "src/"}
     },
     "extra": {
         "branch-alias": {
