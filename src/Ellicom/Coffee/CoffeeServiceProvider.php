@@ -60,7 +60,7 @@ class CoffeeServiceProvider extends ServiceProvider {
           }
 
           return $response;
-        });
+        })->where('file', '.*');
       }
     }
   }
