@@ -49,6 +49,11 @@ class CoffeeServiceProvider extends ServiceProvider {
         {
           $coffee = \Coffee::make($routes.$file);
 
+          if (is_callable($app['config']['vtalbot/coffee::post_process']))
+          {
+            $coffee = $app['config']['vtalbot/coffee::post_process']($coffee);
+          }
+
           $response = \Response::make($coffee, 200, array('Content-Type' => 'text/javascript'));
           $response->setCache(array('public' => true));
 
