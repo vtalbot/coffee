@@ -60,4 +60,14 @@ return array(
 
     'expires' => 1440,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Coffee post processing
+    |--------------------------------------------------------------------------
+    | Provide a function, and the converted CoffeeScript will be processed
+    | by the function before being output
+    */
+
+    'post_process' => function($coffee) { return $coffee; },
+
 );
