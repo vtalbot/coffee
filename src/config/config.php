@@ -38,7 +38,7 @@ return array(
     | JavaScript prefix routes
     |--------------------------------------------------------------------------
     | Just the URL, won't be use to find the CoffeeScript files.
-    | Example: ellicom.com/js/jquery/test.js will search for jquery/test.coffee
+    | Example: example.com/js/jquery/test.js will search for jquery/test.coffee
     */
 
     'prefix' => 'js/',
