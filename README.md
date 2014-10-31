@@ -1,4 +1,4 @@
-# CoffeeScript Compiler for Laravel 4 (Illuminate)
+# CoffeeScript Compiler for Laravel 4
 
 ### Installation
 
@@ -10,7 +10,7 @@ Add to your composer.json those lines
 
 Run `php artisan config:publish vtalbot/coffee`
 
-Then edit `config.php` in `app/packages/vtalbot/coffee` to your needs.
+Then edit `config.php` in `app/config/packages/vtalbot/coffee` to your needs.
 
 Add `'VTalbot\Coffee\CoffeeServiceProvider',` to `providers` in `app/config/app.php`
 and `'Coffee' => 'VTalbot\Coffee\Facades\Coffee',` to `aliases` in `app/config/app.php`
