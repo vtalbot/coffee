@@ -45,7 +45,7 @@ class CoffeeServiceProvider extends ServiceProvider {
     {
       foreach ($app['config']['vtalbot/coffee::extensions'] as $ext)
       {
-        \Route::get($prefix.$routes.'{file}.'.$ext, function($file) use ($routes, $app)
+        \Route::get($prefix.$routes.'{vtalbot_coffee_file}.'.$ext, function($file) use ($routes, $app)
         {
           $coffee = \Coffee::make($routes.$file);
 
@@ -65,7 +65,7 @@ class CoffeeServiceProvider extends ServiceProvider {
           }
 
           return $response;
-        })->where('file', '.*');
+        })->where('vtalbot_coffee_file', '.*');
       }
     }
   }
